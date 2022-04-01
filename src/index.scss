@@ -1,0 +1,42 @@
+.background-gradient {
+  background-image: linear-gradient(
+    to right bottom,
+    #2776ec,
+    #00a8ff,
+    #00ccdf,
+    #00e692,
+    #bef347
+  );
+}
+.btn {
+  padding: 5px 7px;
+  background: #129fdcb4;
+  border-radius: 5px;
+  margin-right: 5px;
+  &:hover {
+    background-color: #00e6928b;
+  }
+  transition: background-color 0.2s;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-section{
+  background: rgba( 255, 255, 255, 0.75 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+}
+.no-appearance{
+  outline: none
+}
+
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
