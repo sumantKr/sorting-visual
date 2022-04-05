@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { Arrayy } from './index'
-export default function Main() {
-  const [size, setSize] = useState(35);
+import { Sorting } from './index'
+export default function Main({sort}) {
+  const [size, setSize] = useState(45);
   const [speed, setspeed] = useState(1);
+  const [startSort,setStartSort]=useState(false);
 
   useEffect(() => {
-    console.log('render', size);
-  }, [size])
-
+    console.log('render main');
+  }, [])
+  
 
   return (
     <div className='flex justify-center items-center w-[100vw] h-[93vh]'>
@@ -17,22 +18,20 @@ export default function Main() {
           <div className='text-lg text-gray-700 mx-auto w-3/4   flex text-center justify-between'>
             <div className='flex flex-col'>
               <label>Size of Array</label>
-              <input className='w-[200px]' type="range" min="35" max="65" onChange={(e) => { setSize(e.target.value) }} />
+              <input className='w-[200px]' type="range" min="50" max="100" onChange={(e) => { setSize(e.target.value) }} />
             </div>
             <div className='flex flex-col'>
               <label>Speed of Sort</label>
               <input className='w-[200px] ' type="range" min="1" max="5" onChange={(e) => { setspeed(e.target.value) }} />
             </div>
             <div className='flex justify-center items-center'>
-              <button className='btn py-3 px-6'>Start Sort</button>
+              <button className='btn py-3 px-8 w-52' onClick={()=>{setStartSort(true)}}>{sort} Sort</button>
             </div>
           </div>
 
         </div>
         {
-          (console.log(size))}
-        {
-          <Arrayy size={size} speed={speed} />
+          <Sorting size={size} speed={speed} startSort={startSort} setStartSort={setStartSort} sort={sort.split(' ')[0]}/>
         }
       </div>
     </div>
